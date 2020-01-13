@@ -1,5 +1,6 @@
 package edu.cnm.deepdive;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -8,11 +9,10 @@ import java.util.Scanner;
 public class CommandLine {
 
   public static void main(String[] args) {
-    Double[] data = read();
-/*
-    int total = sum(vals); //define the integer "total" by running the "sum" method on the array "vals";
+    Double[] data = read();//string from the "read" method
+    System.out.println(Arrays.toString(data));//turn the array to a string and print it
+    double total = sum(data); //define the number "total" by running the "sum" method on "data"
     System.out.println(total);
-*/
   }
 
   private static int[] parse(String[] args) { //the method is called "parse";
@@ -23,10 +23,10 @@ public class CommandLine {
     return values;
   }
 
-  private static int sum(int[] data) { //the method is called "sum";
-    int total = 0;
+  private static double sum(Double[] data) { //the method is called "sum";
+    double total = 0;
     for (int i = 0; i < data.length; i++) {
-      total += data[i]; //add the integer in position i (which increments) of the array data to total;
+      total += data[i]; //add the (double) integer in position i (which increments) of the array data to total;
     }
     return total;
   }
