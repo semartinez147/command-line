@@ -10,15 +10,16 @@ public class CommandLine {
 
   public static void main(String[] args) {
     Double[] data = read();//string from the "read" method
-    System.out.println(Arrays.toString(data));//turn the array to a string and print it
+    System.out.printf("Input values: %s%n", Arrays.toString(data));//turn the array to a string and print it
     double total = sum(data); //define the number "total" by running the "sum" method on "data"
-    System.out.println(total);
+    System.out.printf("Sum: %,.2f%n", total); //print sum formatted with 2 decimals and commas
   }
 
   private static int[] parse(String[] args) { //the method is called "parse";
     int[] values = new int[args.length]; //declare array of ints named "values," make it as big as the number of arguments from the command line;
     for (int i = 0; i < args.length; i++) {
-      values[i] = Integer.parseInt(args[i]); //turn arguments from command line into integers and add them to the array "values";
+      values[i] = Integer.parseInt(
+          args[i]); //turn arguments from command line into integers and add them to the array "values";
     }
     return values;
   }
@@ -33,7 +34,8 @@ public class CommandLine {
 
   private static Double[] read() {
     Double[] data = null;
-    Scanner scanner = new Scanner(System.in); //puts a Scanner in the stack, named "scanner," that refers to a Scanner object in the heap;
+    Scanner scanner = new Scanner(
+        System.in); //puts a Scanner in the stack, named "scanner," that refers to a Scanner object in the heap;
     List<Double> input = new LinkedList<>();
     while (true) {
       try {
