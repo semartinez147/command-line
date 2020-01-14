@@ -36,10 +36,10 @@ public class CommandLine {
     Double[] data = null;
     Scanner scanner = new Scanner(
         System.in); //puts a Scanner in the stack, named "scanner," that refers to a Scanner object in the heap;
-    List<Double> input = new LinkedList<>();
+    List<Double> input = new LinkedList<>();//lists are helpful because they are indeterminate length, unlike arrays
     while (true) {
       try {
-        input.add(scanner.nextDouble());
+        input.add(scanner.nextDouble());//this is why the command prompt waits for input after running
       } catch (NoSuchElementException e) {
         break;
       }
